@@ -1,13 +1,13 @@
-import { afterAll, beforeAll, describe, expect, it } from "vitest";
+import { afterAll, beforeAll, describe, expect, it } from "bun:test";
 import { server } from "./server.ts";
 
 describe("server", () => {
-  beforeAll(async () => {
-    await server.start(0);
+  beforeAll(() => {
+    server.start(0);
   });
 
-  afterAll(async () => {
-    await server.stop();
+  afterAll(() => {
+    server.stop();
   });
 
   it("returns 'hello world' for GET /", async () => {
