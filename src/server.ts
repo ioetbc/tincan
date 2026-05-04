@@ -1,4 +1,10 @@
+import { Hono } from "hono";
+
 const DEFAULT_PORT = 3000;
+
+const app = new Hono();
+
+app.get("/", (c) => c.text("hello world"));
 
 function createApp() {
   let httpServer: ReturnType<typeof Bun.serve> | null = null;
@@ -10,11 +16,7 @@ function createApp() {
     start(port = DEFAULT_PORT): void {
       httpServer = Bun.serve({
         port,
-        fetch() {
-          return new Response("hello world", {
-            headers: { "Content-Type": "text/plain" },
-          });
-        },
+        fetch: app.fetch,
       });
     },
     stop(): void {

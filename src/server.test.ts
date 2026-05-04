@@ -16,4 +16,9 @@ describe("server", () => {
     expect(response.status).toBe(200);
     expect(text).toBe("hello world");
   });
+
+  it("returns 404 for unmatched routes", async () => {
+    const response = await fetch(`http://localhost:${server.port}/not-found`);
+    expect(response.status).toBe(404);
+  });
 });
