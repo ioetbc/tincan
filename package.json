@@ -10,7 +10,7 @@
   },
   "devDependencies": {
     "@ai-hero/sandcastle": "^0.5.7",
-    "bun-types": "latest"
+    "@types/bun": "latest"
   },
   "peerDependencies": {
     "typescript": "^5"
