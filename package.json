@@ -1,0 +1,15 @@
+{
+  "name": "tincan",
+  "module": "index.ts",
+  "type": "module",
+  "private": true,
+  "scripts": {
+    "sandcastle": "npx tsx .sandcastle/main.ts"
+  },
+  "devDependencies": {
+    "@ai-hero/sandcastle": "^0.5.7"
+  },
+  "peerDependencies": {
+    "typescript": "^5"
+  }
+}
